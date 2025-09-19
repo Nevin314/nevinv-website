@@ -1,77 +1,114 @@
-
-div.infoside {
-    float: left;
-    width: 20%;
-    background: #b4befe;
-    border-radius: 25px;
-    padding: 20px;
-}
-
-div.general {
-    float: left; 
-    width: 60%;
-        /*
-    background: #cdd6f4;
-    */
-    background: #b4befe;
-    
-    border-radius: 25px;
-    margin-left: 20px;
-    padding: 20px;
-}
-
-#picture {
-
-    width: 150px; 
-    height: 150px;
-    display: block; 
-    margin: auto;
-    border-radius: 50%;
-
+html {
+    font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial", "sans-serif";
 }
 
 body {
-    /* background: #89b4fa; */
-    background: #181825;
-    padding: 10px;
+    -webkit-font-smoothing: antialiased;
 }
 
-button {
-    background-color: #b4befe;
-    border: none;
-    border-radius: 8px; 
-    display: block; 
-    margin-left: 20px;
-    padding: 10px;
+
+/* Inter,system-ui,-apple-system,sans-serif;*/
+.navbar a { 
+    text-align: center;
+    text-decoration: none;
+    color: gray;
 }
 
-.navbar {
-    margin-bottom: 15px;
+.navbar a:hover {
+    background-color: #C7C7CC;
+    border-radius: 10px;
+    padding: 7px;
 }
 
 .navbar ul {
-    list-style-type: none; 
-    margin: 0; padding: 0; 
-    overflow: hidden; 
-    background-color: #b4befe;
-    border-radius: 20px;
+    list-style: none; 
+    text-align: center;
 }
 
-.navbar li a {
-    float: left;
-    display: block;
-    color: black;
-    padding: 8px 16px;
-    text-decoration: none;
+.navbar ul li {
+    display:inline-block; 
+    padding:0 7px; 
+    position:relative;
 }
 
+ul li:not(:last-child)::after{
+  content:""; 
+  border:1px solid #e2e2e2;
+  border-width: 1px 1px 0 0;
+  position:absolute; 
+  right:-3px; 
+  top:0; 
+  height:100%;
+}
+
+#toggle-button {
+
+}
+
+
+/* AI CSS for the 2nd version */ 
+
+/* Page container */
 .container {
     max-width: 900px;
     margin: 40px auto;
     padding: 20px;
     line-height: 1.6;
+    color: #1c1c1e;
 }
 
-.other-mode {
+/* Headings */
+h1, h2, h3 {
+    color: #111;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* Paragraphs */
+p {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* AI-specific sections (cards) */
+.card {
+    background: #f9f9f9;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* Buttons/links */
+.button {
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: #b4befe;
+    border-radius: 8px;
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s ease;
+}
+
+.button:hover {
+    background-color: #a4acec;
+}
+
+#toggle-button {
+
+    border: none;
+    border-radius: 8px; 
+    display: block; 
+    padding: 10px;
+}
+
+#toggle-button:hover {
+
+    background-color: #C7C7CC;
+}
+
+
+#picture {
     display: none;
 }
