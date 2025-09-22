@@ -2,66 +2,46 @@
 <html>
 <head>
     <title>Page Title</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+
     <link id="theme" rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="bar.css">
-<script src="toggle.js"> 
-</script>
 </head>
 <body>
 
 <div class = "container"> 
-<div class = "navbar"> 
-    <ul> 
-        <li> <a href="home.html"> About me </a> </li>
-        <li> <a href="projects.html"> Projects </a> </li>
-        <li> <a href="qualifications.html"> Qualifications </a> </li>
-        <li> <a href="service.html"> Services </a> </li>
-        <li> <a href="ai.html"> AI Page </a> </li>
-    </ul>
-</div>
+    <div class = "navbar"> 
+        <ul> 
+            <li> <a href="index.html"> About me </a> </li>
+            <li> <a href="projects.html"> Projects </a> </li>
+            <li> <a href="blog.html"> Blog </a></li>
+        </ul>
+    </div>
 
 
 
-<div class="infoside"> 
-    <img id = "picture" src = "pic.jpg"> 
-    <p> Studying Computer Science @ Texas A&ampM <br> 2027 </p>
-</div>
-
-<div class="general">
     <h1> Hi, I'm Nevin! </h2>
-    <hr />
-    <h2>About me: </h1>
-    <p> Hello, I'm Nevin. This is my personal website, where I'll be detailing what I'm working on, what I've learned, and anything
-        else related to my technical experiences and skills. After reading through this website, you should have a better grasp of 
-        my knowledge and what I can contribute as a software engineer. <br> <br> Currently, I'm a junior studying Computer Science at Texas A&M. I've been interested in Computer Science since middle school, when I 
-        began my journey by writing simple scripts and basic games in my free time. Since then, I've learned a lot about Computer 
-        Science - from the theoretical side to the more hands-on world of hardware. I've taken classes on topics like data structures
-        and algorithms, and topics like hardware architecture, down to the CPU design. I learned a lot from these classes, and plan 
-        on taking many more. Outside of school,
-        I've also gained a lot of real world experiences. Last summer, I interned at Fidelity Investments as a Fullstack Software 
-        Engineer, where I learned a lot of things about writing industry standard code, collaborating with other software engineers, 
-        and how to use a lot of new industry tools. This was a great experience for me, and took me one step closer to becoming a full-on
-        software engineer. Even apart from work experience, I've worked on several <a href="projects.html">personal projects</a> in my
-        free time, ranging from CLI tools to websites (like this one here). 
-        <br> More recently, I've become interested in the algorithmic side of computer science more. I have started solving problems 
-        on <a href="https://codeforces.com">codeforces</a>, a competitive programming website. It's been challenging, but I've
-        learned a lot and grown to appreciate computer science a lot more - particularly the deep connection it has to math and the 
-        powerful ability to solve complex problems with massive inputs in just milliseconds. 
-        <br> In the future, I hope to utilize my problem-solving skills and passion for low-level programming in my job. If you're
-        interested in reading more about my qualifications and skills, <a href="qualifications.html"> click here </a>. You can also
-        read more about <a href="service.html">what I do for my community</a>, or view a <a href="ai.html"> page I created with AI </a>.  
+
+    <div class="general">
+        <p> 
+            This is my personal website, where you'll find information about my skills, what I'm working on, and what I'm learning. Here's a little about myself:
+        </p>
+        <div class="about-me"> 
+            > Currently studying computer science @ tamu (2027) <br> 
+            > Prev: SWE intern @ Fidelity Investments <br> 
+            > Learning competitive programming and working on side projects (like this!) <br>
+        </div>
+    </div>
 </div>
 
-<div> 
-</div>
-
-<button id="toggle-button" onclick="toggleStyle()"> Toggle Style </button>
-<div class="other-mode"> 
-    <p> If you're seeing this, you're in the other mode (you can toggle back with the button above). The styling in this mode
-        was inspired by apple, and takes a more minimalistic approach.
-    </p>
-</div>
-<p></p>
-
+<script> 
+const currentPage = window.location.pathname.split("/").pop();
+  document.querySelectorAll(".navbar a").forEach(link => {
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("active");
+    }
+});
+</script>
 </body>
 </html>
