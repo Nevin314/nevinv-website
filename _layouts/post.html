@@ -1,0 +1,13 @@
+---
+layout: default
+nav: posts
+---
+<article class="post">
+  <h1>{{ page.title }}</h1>
+  <div class="byline"><time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%Y-%m-%d" }}</time>{% if page.summary %} · {{ page.summary }}{% endif %}</div>
+  {{ content }}
+</article>
+<div class="post-nav">
+  {% if page.previous %}<a href="{{ page.previous.url | relative_url }}">← {{ page.previous.title }}</a>{% else %}<span></span>{% endif %}
+  {% if page.next %}<a href="{{ page.next.url | relative_url }}">{{ page.next.title }} →</a>{% endif %}
+</div>

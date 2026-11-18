@@ -1,69 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
-<link id="theme" rel="stylesheet" href="home.css">
-</head>
-<body>
-
-<div class = "container"> 
-
-    <div class = "navbar"> 
-        <ul> 
-            <li> <a href="index.html"> About me </a> </li>
-            <li> <a href="projects.html"> Projects </a> </li>
-            <li> <a href="blog.html"> Blog </a></li>
-        </ul>
-    </div>
-    <div class="projects-section"> 
-
-        <h2> Here's some of my recent projects: </h2>
-        <div id="projects" class="projects"> 
-
-        </div>
-    </div>
-
-</div>
-
-<script>
-    document.addEventListener("DOMContentLoaded", async() => {
-        const username = "nevin314"; 
-        const projectsContainer = document.getElementById("projects");
-
-        try {
-            const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated`);
-            const repos = await response.json();
-
-            // Filter out forks or specific repos if you want
-            const filtered = repos.filter(repo => !repo.fork).slice(0, 4);
-
-            projectsContainer.innerHTML = filtered.map(repo => {
-            //const imgPath = `images/${repo.name}.png`;
-            //<img src="${imgPath}" alt="${repo.name}" class="project-image" />
-            return `
-            <div class="project-card">
-                <a href="${repo.html_url}" target="_blank" class="project-title">${repo.name}</a>
-                <p class="project-desc">${repo.description ? repo.description : "No description available."}</p>
-                <p class="project-meta">
-                ⭐ ${repo.stargazers_count} | 🍴 ${repo.forks_count} | Updated ${new Date(repo.updated_at).toLocaleDateString()}
-                </p>
-            </div>
-            `;
-        }).join("");
-        } catch (err) {
-            projectsContainer.innerHTML = `<p>Failed to load projects 😔</p>`;
-            console.error(err);
-        }
-    });
-</script>
-</body>
-</html>
-
-
-<!-- 
-TODO: 
-I want to add functionality to search for/pin specific projects rather than just show everything, but this is fine for now. 
---> 
+---
+layout: default
+title: projects
+nav: projects
+path_label: ~/nevin/projects
+---
+<section>
+  <h2>projects <small>from github, newest first</small></h2>
+  <ul class="projects full" data-projects><li class="empty">loading…</li></ul>
+</section>

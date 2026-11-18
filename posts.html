@@ -1,0 +1,16 @@
+---
+layout: default
+title: posts
+nav: posts
+path_label: ~/nevin/posts
+---
+<section>
+  <h2>posts</h2>
+  <ul class="posts">
+    {% for post in site.posts %}
+    <li><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%Y-%m-%d" }}</time><a class="t" href="{{ post.url | relative_url }}">{{ post.title }}</a>{% if post.summary %}<span class="d">{{ post.summary }}</span>{% endif %}</li>
+    {% else %}
+    <li class="empty">no posts yet.</li>
+    {% endfor %}
+  </ul>
+</section>

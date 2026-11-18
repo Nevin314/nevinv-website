@@ -1,0 +1,28 @@
+title: nevin v
+description: cs @ texas a&m. notes on systems programming and competitive programming.
+url: https://nevinv.com
+
+# posts live at /posts/<slug>/ (scoped to posts so pages keep their .html names)
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      permalink: /posts/:title/
+  - scope:
+      path: ""
+      type: drafts
+    values:
+      layout: post
+      permalink: /posts/:title/
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
